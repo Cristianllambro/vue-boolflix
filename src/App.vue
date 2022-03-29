@@ -8,6 +8,7 @@
 <script>
 import HeaderContent from './components/HeaderContent.vue'
 import MainContent from './components/MainContent.vue'
+import axios from 'axios';
 
 export default {
   name: 'App',
@@ -25,6 +26,14 @@ export default {
     dataMovie(dataElement) {
       console.log(dataElement)
       this.strGenerate = dataElement
+    },
+
+    movieResearch() {
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=3fb5afa145004592af904e3418c1b1f8&language=en-US&query=${this.dataGenerate}&page=1&include_adult=false`)
+    .then ((itemResult) => {
+        this.arrMovies = itemResult.data.results
+        console.log(itemResult.data.results)
+    });
     }
   }
 }
