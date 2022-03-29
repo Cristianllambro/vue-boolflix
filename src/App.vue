@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderContent @callSearch="dataMovie" />
-    <MainContent />
+    <MainContent :dataGenerate = strGenerate />
   </div>
 </template>
 
@@ -15,10 +15,16 @@ export default {
     HeaderContent,
     MainContent,
   },
+  data () {
+    return {
+      strGenerate: '',
+    }
+  },
 
   methods: {
     dataMovie(dataElement) {
       console.log(dataElement)
+      this.strGenerate = dataElement;
     }
   }
 }

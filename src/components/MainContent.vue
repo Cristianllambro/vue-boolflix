@@ -12,7 +12,7 @@
 
 <script>
 import CardMovies from './CardMovies.vue'
-const axios = require('axios');
+import axios from 'axios';
 
 export default {
     name: 'MainContent',
@@ -20,17 +20,25 @@ export default {
         CardMovies,
     },
 
+    props: {
+        dataGenerate: String,
+    },
+
     data () {
         return {
-            arrMovies: '',
+            arrMovies: [],
         }
     },
 
-    created () {
-        axios.get('https://api.themoviedb.org/3/search/movie?api_key=3fb5afa145004592af904e3418c1b1f8&query=ritorno+al+futuro').then ((result) => {
-            this.arrMovies = result.data.results
-            console.log(result)
-        });
+    methods: {
+        movieResearch() {
+            axios.get(`https://api.themoviedb.org/3/search/movie?api_key=3fb5afa145004592af904e3418c1b1f8&language=en-US&page=1&query=${this.dataGenerate}`)
+            .then ((itemResult) => {
+                this.arrMovies = itemResult.data.results
+                console.log(itemResult.data.results)
+                return this.arrMovies
+            });
+        }
     },
 
 
