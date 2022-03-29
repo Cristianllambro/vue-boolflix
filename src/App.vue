@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <HeaderContent @callSearch="dataMovie" />
-    <MainContent :movieResearch = strGenerate />
+    <HeaderContent @callSearch="movieResearch" />
+    <MainContent :arrMovies = arrMovies />
   </div>
 </template>
 
@@ -18,18 +18,13 @@ export default {
   },
   data () {
     return {
-      strGenerate: '',
+      arrMovies: [],
     }
   },
 
   methods: {
-    dataMovie(dataElement) {
-      console.log(dataElement)
-      this.strGenerate = dataElement
-    },
-
-    movieResearch() {
-    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=3fb5afa145004592af904e3418c1b1f8&language=en-US&query=${this.dataGenerate}&page=1&include_adult=false`)
+    movieResearch(itemMovie) {
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=3fb5afa145004592af904e3418c1b1f8&language=en-US&query=${itemMovie}&page=1&include_adult=false`)
     .then ((itemResult) => {
         this.arrMovies = itemResult.data.results
         console.log(itemResult.data.results)

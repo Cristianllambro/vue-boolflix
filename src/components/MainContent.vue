@@ -1,7 +1,7 @@
 <template>
   <div class="container">
       <div class="main">
-        <CardMovies v-for="element in arrMovies" :key="element.title" 
+        <CardMovies v-for="element in arrMovies" :key="element.id" 
         :title="element.title"
         :origianlTitle="element.original_title"
         :lang="element.original_language"
@@ -21,13 +21,7 @@ export default {
     },
 
     props: {
-        movieResearch: String,
-    },
-
-    data () {
-        return {
-            arrMovies: [],
-        }
+        arrMovies: Array,
     },
 
 }
