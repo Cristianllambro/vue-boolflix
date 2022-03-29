@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <HeaderContent @callSearch="dataMovie" />
-    <MainContent :dataGenerate = strGenerate />
+    <MainContent :movieResearch = strGenerate />
   </div>
 </template>
 

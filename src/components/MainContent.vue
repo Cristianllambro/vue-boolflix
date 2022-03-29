@@ -21,7 +21,7 @@ export default {
     },
 
     props: {
-        dataGenerate: String,
+        movieResearch: String,
     },
 
     data () {
@@ -29,11 +29,6 @@ export default {
             arrMovies: [],
         }
     },
-
-    methods: {
-
-    },
-
 
 }
 </script>
