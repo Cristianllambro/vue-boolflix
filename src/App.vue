@@ -24,7 +24,7 @@ export default {
   methods: {
     dataMovie(dataElement) {
       console.log(dataElement)
-      this.strGenerate = dataElement;
+      this.strGenerate = dataElement
     }
   }
 }

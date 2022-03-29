@@ -36,7 +36,6 @@ export default {
             .then ((itemResult) => {
                 this.arrMovies = itemResult.data.results
                 console.log(itemResult.data.results)
-                return this.arrMovies
             });
         }
     },
