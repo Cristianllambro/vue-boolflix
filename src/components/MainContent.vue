@@ -5,7 +5,8 @@
 
         <!-- card movie -->
         <div class="movie">
-            <card-movies v-for="element in arrMovies" :key="element.id" 
+            <card-movies v-for="element in arrMovies" :key="element.id"
+                :img="element.poster_path" 
                 :title="element.title"
                 :origianlTitle="element.original_title"
                 :lang="element.original_language"
@@ -17,7 +18,8 @@
 
         <!-- card tv-show -->
         <div class="series-tv">
-            <card-show v-for="element in arrShow" :key="element.id" 
+            <card-show v-for="element in arrShow" :key="element.id"
+                :img="element.poster_path"
                 :titleShow="element.name"
                 :originalShowTitle="element.original_name"
                 :langShow="element.original_language"

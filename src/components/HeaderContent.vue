@@ -27,19 +27,19 @@ export default {
 <style lang="scss" scoped>
 .container{
     width: 100vw;
-    height: 120px;
+    height: 100px;
     background-color: black;
 }
 
 .main-header{
     width: 100vw;
-    height: 120px;
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     .logo{
-        font-size: 24px;
+        font-size: 30px;
         font-weight: 700;
         color: red;
         padding-left: 2rem;

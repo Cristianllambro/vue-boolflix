@@ -1,5 +1,6 @@
 <template>
   <div class="card">
+      <img :src="imgUrl + img" :alt="title">
       <h1>{{ title }}</h1>
       <h2>{{origianlTitle }}</h2>
       <lang-flag :iso="lang" :squared="false" />
@@ -13,6 +14,7 @@ import LangFlag from 'vue-lang-code-flags';
 export default {
     name: 'CardMovies',
     props: {
+        img: String,
         title: String,
         origianlTitle: String,
         lang: String,
@@ -21,6 +23,18 @@ export default {
     components: {
         LangFlag,
     },
+
+    data () {
+        return{ 
+            imgUrl: 'https://image.tmdb.org/t/p/w342'
+        }
+    },
+
+    methods: {
+        ratingNumber() {
+            let rating = parseInt(this.vote) 
+        }
+    }
 }
 </script>
 
