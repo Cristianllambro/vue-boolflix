@@ -25,15 +25,15 @@ export default {
 
   methods: {
     movieResearch(itemMovie) {
+      this.arrMovies = [];
       axios.get(`https://api.themoviedb.org/3/search/movie?api_key=3fb5afa145004592af904e3418c1b1f8&language=en-US&query=${itemMovie}&page=1&include_adult=false`)
       .then ((itemResult) => {
-        console.log(itemResult.data.results)
         this.arrMovies = itemResult.data.results
       });
 
+      this.arrShow = [];
       axios.get(`https://api.themoviedb.org/3/search/tv?api_key=3fb5afa145004592af904e3418c1b1f8&language=en-US&query=${itemMovie}&page=1&include_adult=false`)
         .then((itemShow) => {
-        console.log(itemShow)
         this.arrShow = itemShow.data.results
       });
     }

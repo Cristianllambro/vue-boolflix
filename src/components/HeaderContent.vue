@@ -2,12 +2,20 @@
   <div class="container">
     <div class="main-header">
         <div class="logo">
-            BOOLFLIX
+            <img class="img-logo" src="../../public/logo-netflix.png" alt="logo netflix">
+
+            <ul>
+                <li><a href="#!">Home</a></li>
+                <li><a href="#!">Movies</a></li>
+                <li><a href="#!">TV Show</a></li>
+            </ul>
+
         </div>
+
 
         <form class="search" @submit.prevent="">
             <input class="input" type="text" placeholder="Search movie" v-model="inputMovie">
-            <button class="btn" @click="$emit('callSearch', inputMovie)">Search</button>
+            <button class="btn" @click="$emit('callSearch', inputMovie), clearInput()">Search</button>
         </form>
     </div>
   </div>
@@ -19,6 +27,12 @@ export default {
     data () {
         return {
             inputMovie: '',
+        }
+    },
+
+    methods: {
+        clearInput() {
+            this.inputMovie = '';
         }
     }
 }
@@ -38,12 +52,30 @@ export default {
     align-items: center;
     justify-content: space-between;
 
+    .img-logo{
+        width: 220px;
+        height: 100px;
+        display: inline-block;
+    }
+
     .logo{
-        font-size: 30px;
-        font-weight: 700;
+        width: 700px;
         color: red;
         padding-left: 2rem;
         cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        li{
+            list-style: none;
+            display: inline-block;
+            padding: 0 1rem;
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
     }
     
     .search{
