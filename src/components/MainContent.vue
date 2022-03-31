@@ -39,17 +39,12 @@
             </div>
         </div>
             
-
-        <div class="home-movie">
-            <div class="card" v-for="element in arrHomeMovies" :key="element.id"></div>
-        </div>
-  </div>
+    </div>
 </template>
 
 <script>
 import CardMovies from './CardMovies.vue'
 import CardShow from './CardShow.vue'
-import axios from 'axios'
 
 export default {
     name: 'MainContent',
@@ -68,14 +63,6 @@ export default {
             arrHomeMovies: ''
         };
     },
-
-    created () {
-        axios.get("https://api.themoviedb.org/3/movie/{movie_id}/lists?api_key=3fb5afa145004592af904e3418c1b1f8&language=en-US&page=1")
-        .then ((item) => {
-            this.arrHomeMovies = item.data.results
-        })
-    }
-
 }
 </script>
 

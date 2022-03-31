@@ -1,6 +1,9 @@
 <template>
   <div class="card">
         <img class="img" :src="imgUrl + img" :alt="title" v-if="img !== null">
+        <img class="img-color" src="../../public/img-color-2.jpg" alt="color" v-else>
+
+        <!-- text for movie -->
         <div class="visible-txt">
             <h2> Title: {{ title }}</h2>
             <h2>Original Title: {{origianlTitle }}</h2>
@@ -62,9 +65,12 @@ export default {
     color: white;
     position: relative;
     cursor: pointer;
-
     .img{
+        width: 342px;
+        height: 513px;
         border-radius: 10px;
+        object-fit: cover;
+
     }
 
     .visible-txt{

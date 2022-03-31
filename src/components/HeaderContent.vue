@@ -9,7 +9,6 @@
                 <li><a href="#!">Movies</a></li>
                 <li><a href="#!">TV Show</a></li>
             </ul>
-
         </div>
 
 

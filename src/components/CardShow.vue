@@ -1,7 +1,9 @@
 <template>
     <div class="card">
-        <img :src="imgUrl + img" :alt="titleShow" v-if="img !== null">
+        <img class="img" :src="imgUrl + img" :alt="titleShow" v-if="img !== null">
+        <img class="img-color" src="../../public/img-color-2.jpg" alt="color" v-else>
 
+        <!-- text for tv show -->
         <div class="visible-txt">
             <h2>Title: {{ titleShow }}</h2>
             <h2>Original Title: {{originalShowTitle }}</h2>
@@ -61,5 +63,15 @@ export default {
 <style>
 .red{
     color: crimson;
+}
+.bk-color{
+    background-color: aqua;
+}
+
+.img-color{
+    width: 342px;
+    height: 513px;
+    object-fit: cover;
+    border-radius: 10px;
 }
 </style>
