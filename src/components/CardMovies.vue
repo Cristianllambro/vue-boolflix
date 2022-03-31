@@ -1,7 +1,6 @@
 <template>
   <div class="card">
         <img class="img" :src="imgUrl + img" :alt="title" v-if="img !== null">
-
         <div class="visible-txt">
             <h2> Title: {{ title }}</h2>
             <h2>Original Title: {{origianlTitle }}</h2>
@@ -80,6 +79,8 @@ export default {
         top: 0;
         left: 0;
 
+         overflow-y: auto;
+
         h2{
             padding-bottom: .6rem;
         }
@@ -92,12 +93,12 @@ export default {
     }
 
     &:hover .img{
-        transition: all 1s linear;
+        transition: all 1.5s linear;
         opacity: 0;
     }
 
     &:hover .visible-txt{
-        transition: all 2s linear;
+        transition: all 1.5s linear;
         opacity: 1;
     }
 }
