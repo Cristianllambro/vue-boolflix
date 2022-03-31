@@ -1,15 +1,19 @@
 <template>
     <div class="card">
         <img :src="imgUrl + img" :alt="titleShow" v-if="img !== null">
-        <h1>Title: {{ titleShow }}</h1>
-        <h2>Original Title: {{originalShowTitle }}</h2>
-        <h2> Rating: 
-          <span v-for="(element,index) in 5" :key="index" :class="index < ratingNumber() ? 'red' : '' ">&starf;</span>
-      </h2>
-        
-        <h3>
-            Lenguage: <lang-flag :iso="langShow" :squared="false" />
-        </h3>
+
+        <div class="visible-txt">
+            <h2>Title: {{ titleShow }}</h2>
+            <h2>Original Title: {{originalShowTitle }}</h2>
+            <h2> Rating: 
+                <span v-for="(element,index) in 5" :key="index" :class="index < ratingNumber() ? 'red' : '' ">&starf;</span>
+            </h2>
+            
+            <h3>
+                Lenguage: <lang-flag :iso="langShow" :squared="false" />
+            </h3>
+            <h4>Overview: {{ overview }}</h4>
+        </div>
     </div>
 </template>
 
@@ -29,6 +33,7 @@ export default {
         originalShowTitle: String,
         langShow: String,
         voteShow: String,
+        overview: String,
     },
 
     data () {
