@@ -1,6 +1,6 @@
 <template>
     <div class="card">
-        <img :src="imgDefault()" :alt="titleShow" v-if="img !== null">
+        <img :src="imgUrl + img" :alt="titleShow" v-if="img !== null">
         <h1>Title: {{ titleShow }}</h1>
         <h2>Original Title: {{originalShowTitle }}</h2>
         <h2> Rating: 

@@ -40,13 +40,12 @@ export default {
 
 <style lang="scss" scoped>
 .container{
-    width: 100vw;
+    max-width: 99vw;
     height: 100px;
     background-color: black;
 }
 
 .main-header{
-    width: 100vw;
     height: 100px;
     display: flex;
     align-items: center;
